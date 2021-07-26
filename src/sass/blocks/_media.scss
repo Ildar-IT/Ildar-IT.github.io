@@ -144,6 +144,11 @@
             grid-auto-rows: minmax(600px, auto);
             gap: 30px 40px;
         }
+        &__photo {
+            img {
+                height: 100%;
+            }
+        }
     }
 }
 

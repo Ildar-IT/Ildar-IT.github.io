@@ -21,7 +21,7 @@
     &__photo {
         img {
             width: 100%;
-            height: 100%;
+            height: 600px;
             object-fit: cover;
         }
     }
@@ -164,4 +164,7 @@
         font-size: 12px;
         margin-bottom: 0px;
     }
+    // textarea.form-error {
+    //     height: 154px;
+    // }
 }
