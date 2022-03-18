@@ -22,13 +22,6 @@ counters.forEach( (item, i) => {
 
 //Validate checkbox, add new class tag "span" in block "privacy"
 $(document).ready(function(){
-    $('.contacts__btn').on('click', function() {
-        if (!($('#checkbox').is(':checked'))){
-            $('#contacts__policy-span').addClass("contacts__policy-error");
-        } else {
-            $('#contacts__policy-span').removeClass("contacts__policy-error");
-        }
-    });
     //Function with validation form
     function formValidate (form) {
         $(form).validate({
@@ -69,27 +62,42 @@ $(document).ready(function(){
         });
     }
 
+    $('.contacts__btn').on('click', function() {
+        if (!($('#checkbox').is(':checked'))){
+            $('#contacts__policy-span').addClass("contacts__policy-error");
+        } else {
+            $('#contacts__policy-span').removeClass("contacts__policy-error");
+        }
+    });
+
+    jQuery.validator.setDefaults({
+        debug: true,
+        success: "valid"
+    });
 
     formValidate('#contacts-form');
+    $('form').submit(function (e) {
+        if ($('form').valid() === true) {
+            console.log('Форма прошла валидацию, отправляем письмо.');
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "mailer/smart.php",
+                data: $(this).serialize()
+            }).done(function() {
+                $(this).find("input").val("");
+                $('.overlay, #thanks').fadeIn('slow');
+
+                $('form').trigger('reset');
+            });
+            return false;
+        }
+    });
+
 
     $('.modal__close').on('click', function() {
         $('.overlay, #thanks').fadeOut('slow');
     });
 
-    //Mailer
-    $('form').submit(function(e) {
-        e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "mailer/smart.php",
-            data: $(this).serialize()
-        }).done(function() {
-            $(this).find("input").val("");
-            $('.overlay, #thanks').fadeIn('slow');
-
-            $('form').trigger('reset');
-        });
-        return false;
-    });
 
 });

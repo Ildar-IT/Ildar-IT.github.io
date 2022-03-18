@@ -1,0 +1,50 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\Bootstrap"
+		},
+		{
+			"path": "..\\..\\Uber"
+		},
+		{
+			"path": "..\\..\\Wordpress"
+		},
+		{
+			"path": "..\\..\\Pulse"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\MyPrograms\\OpenServer\\domains\\localhost"
+		},
+		{
+			"path": "..\\..\\test"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\KinoMonster"
+		},
+		{
+			"path": "..\\..\\AllPages"
+		},
+		{
+			"path": "..\\..\\Lancome"
+		},
+		{
+			"path": "..\\..\\Webdev2019-master"
+		},
+		{
+			"path": "..\\..\\Audi"
+		},
+		{
+			"path": "..\\..\\Antica"
+		},
+		{
+			"path": "..\\..\\..\\Javascript + React"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "test",
+		"git.ignoreLimitWarning": true
+	}
+}
